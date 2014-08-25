@@ -17,8 +17,24 @@ class StationsController < ApplicationController
     end
   end
 
-  private
-  def station_params
-    params.require(:station).permit(:name)
+  def edit
+    @station = Station.find(params[:id])
   end
+
+  def update
+    @station = Station.find(params[:id])
+    if @station.update(station_params)
+      flash[:notice] = "Station updated."
+      redirect_to station_path(@station)
+    else
+      render 'edit'
+    end
+  end
+
+  private
+    def station_params
+      params.require(:station).permit(:name)
+    end
+
+
 end
