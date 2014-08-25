@@ -1,0 +1,7 @@
+<% content_for(:title, "New stop | Stops") %>
+<h1><%= @stop.number %></h1>
+<p><%= link_to "Edit", edit_stop_path(@stop), :class => "btn btn-default" %></p>
+<p><%= link_to "Delete", stop_path(@stop),
+                         :data => {:confirm => "You sure?",
+                                   :method => "delete"},
+                         :class => "btn btn-danger" %></p>

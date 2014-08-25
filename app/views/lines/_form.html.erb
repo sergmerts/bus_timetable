@@ -1,0 +1,6 @@
+<%= form_for(@line) do |f| %>
+  <div class="form-group">
+    <%= f.text_field :name, placeholder: "Name" %>
+  </div>
+  <%= f.submit(:class => "btn btn-primary") %>
+<% end %>

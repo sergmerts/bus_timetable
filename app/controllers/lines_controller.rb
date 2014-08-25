@@ -1,5 +1,5 @@
 class LinesController < ApplicationController
-   def index
+  def index
     @lines = Line.all
   end
 

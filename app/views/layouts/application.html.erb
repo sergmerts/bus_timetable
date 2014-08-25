@@ -7,14 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header class="navbar navbar-fixed-top ">
+  <header class="navbar navbar-fixed-top">
     <div class="navbar-inner">
-    <div class="container">
+      <div class="container">
         <%= link_to "bus timetable", '/', id: "logo" %>
         <nav>
-          <ul class="nav pull-right">
+          <ul class="nav navbar-nav pull-right">
             <li><%= link_to "Home", '/' %></li>
             <li><%= link_to "Lines", lines_path %></li>
+            <li><%= link_to "Stations", stations_path %></li>
+            <li><%= link_to "Stops", stops_path %></li>
           </ul>
         </nav>
       </div>
@@ -22,8 +24,8 @@
   </header>
   <div class="container">
     <% flash.each do |key, value| %>
-        <div class="alert alert-success<%= key %>"><%= value %></div>
-      <% end %>
+      <div class="alert alert-success<%= key %>"><%= value %></div>
+    <% end %>
     <%= yield %>
   </div>
 </body>
