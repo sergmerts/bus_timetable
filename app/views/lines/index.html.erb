@@ -1,0 +1,8 @@
+<h1>All Lines</h1>
+<ul>
+  <% @lines.each do |line| %>
+  <li><a href="<%= line_path(line)%>"><%= line.name %></a></li>
+  <% end %>
+</ul>
+
+<%= link_to "New line", new_line_path, :class=> "btn btn-default" %>
