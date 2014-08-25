@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails'
 gem 'pg'
 gem 'bootstrap-sass'
@@ -10,6 +9,7 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'simple_form'
 
 group :development do
   gem 'better_errors'

@@ -1,5 +1,13 @@
 <% content_for(:title, "New line | Lines") %>
 <h1><%= @line.name %></h1>
+
+<h3>All Stations for this line</h3>
+<ul>
+  <% @line.stations.each do |station| %>
+    <li><%= station.name %></li>
+  <% end %>
+</ul>
+
 <p><%= link_to "Edit", edit_line_path(@line), :class => "btn btn-default" %></p>
 <p><%= link_to "Delete", line_path(@line),
                          :data => {:confirm => "You sure?",

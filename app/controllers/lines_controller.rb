@@ -13,6 +13,7 @@ class LinesController < ApplicationController
 
   def create
     @line = Line.new(line_params)
+
     if @line.save
       flash[:notice] = "Line was added"
       redirect_to lines_path
@@ -43,8 +44,8 @@ class LinesController < ApplicationController
     end
   end
 
-  private
-    def line_params
-      params.require(:line).permit(:name)
-    end
+private
+  def line_params
+    params.require(:line).permit(:name, station_ids: [])
+  end
 end

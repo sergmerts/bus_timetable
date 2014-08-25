@@ -1,8 +1,4 @@
 <h1>All Stops</h1>
-<ul>
-  <% @stops.each do |stop| %>
-  <li><a href="<%= stop_path(stop)%>"><%= stop.number %></a></li>
-  <% end %>
-</ul>
+
 
 <%= link_to "New stop", new_stop_path, :class=> "btn btn-default" %>
