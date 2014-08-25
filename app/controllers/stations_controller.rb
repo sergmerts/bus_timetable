@@ -7,6 +7,10 @@ class StationsController < ApplicationController
     @station = Station.new
   end
 
+  def show
+    @station = Station.find(params[:id])
+  end
+
   def create
     @station = Station.new(station_params)
     if @station.save
@@ -28,6 +32,14 @@ class StationsController < ApplicationController
       redirect_to station_path(@station)
     else
       render 'edit'
+    end
+  end
+
+  def destroy
+    @station = Station.find(params[:id])
+    if @station.destroy
+      flash[:notice] = "The station was deleted."
+      redirect_to stations_path
     end
   end
 
