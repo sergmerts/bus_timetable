@@ -1,5 +1,7 @@
 <%= content_for(:title, "New Station | Bus Timetables") %>
 
+<%= render("layouts/errors", :object => @station) %>
+
 <%= form_for(@station) do |f| %>
   <div class="form-group">
     <%= f.label :name %>
